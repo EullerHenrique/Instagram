@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { AcessoComponent } from './acesso/acesso.component';
+import { BannerComponent } from './banner/banner.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, AcessoComponent ],
+  declarations: [ AppComponent, HelloComponent, AcessoComponent, BannerComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
