@@ -16,7 +16,8 @@ import { Component, OnInit, trigger, state, style } from '@angular/core';
   ]
 })
 export class BannerComponent implements OnInit {
-
+  public estado: string = 'escondido';
+   
   constructor() { }
 
   ngOnInit() {
