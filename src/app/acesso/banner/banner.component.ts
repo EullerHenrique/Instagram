@@ -20,8 +20,6 @@ import { Image } from './image.model';
 })
 export class BannerComponent implements OnInit {
   
-  public estado: string = 'escondido';
-
   public imagens: Image[] = [
     { estado: 'visivel' , url: 'https://user-images.githubusercontent.com/48317736/105919970-4d285280-6015-11eb-931b-a6d575198789.png'},
     { estado: 'escondido', url: 'https://user-images.githubusercontent.com/48317736/105919973-4e597f80-6015-11eb-9db8-b8f6965b8869.png'},
