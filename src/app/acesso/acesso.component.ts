@@ -12,7 +12,7 @@ import { transition, animate, trigger, state, style } from '@angular/animations'
     })),
     transition('void  => criado',
      [ style( {opacity: 0, transform: 'translate(-50px,0) ' } ),
-       animate( '500ms 1s ease-in-out') //duração, delay e aceleração
+       animate( '500ms 0s ease-in-out') //duração, delay e aceleração
       ])
     ])
   ]
