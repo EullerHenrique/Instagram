@@ -44,13 +44,13 @@ export class BannerComponent implements OnInit {
 
     //Ocultar imagem
 
-    for(let i: number = 0; i <=4; i++){
+    for(let i: number = 0; i <= 4; i++){
 
       if(this.imagens[i].estado === 'visivel'){
 
         this.imagens[i].estado = 'escondido';
 
-        idx = i === 4? 0: 4;
+        idx = i === 4? 0: i + 1;
 
         break;
 
