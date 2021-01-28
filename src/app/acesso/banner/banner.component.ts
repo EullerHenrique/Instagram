@@ -23,7 +23,7 @@ export class BannerComponent implements OnInit {
   public estado: string = 'escondido';
 
   public imagens: Image[] = [
-    { estado: 'escondido' , url: 'https://user-images.githubusercontent.com/48317736/105919970-4d285280-6015-11eb-931b-a6d575198789.png'},
+    { estado: 'visivel' , url: 'https://user-images.githubusercontent.com/48317736/105919970-4d285280-6015-11eb-931b-a6d575198789.png'},
     { estado: 'escondido', url: 'https://user-images.githubusercontent.com/48317736/105919973-4e597f80-6015-11eb-9db8-b8f6965b8869.png'},
     { estado: 'escondido', url: 'https://user-images.githubusercontent.com/48317736/105919977-4ef21600-6015-11eb-8535-3b5a3874b79e.png'},
     { estado: 'escondido', url: 'https://user-images.githubusercontent.com/48317736/105919980-50234300-6015-11eb-9c95-e711c0c728e0.png'},
@@ -33,6 +33,40 @@ export class BannerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    setTimeout(() => this.logicaRotacao(), 2000);
+
+  }
+
+  public logicaRotacao(): void{
+
+    let idx: number;
+
+    //Ocultar imagem
+
+    for(let i: number = 0; i <=4; i++){
+
+      if(this.imagens[i].estado === 'visivel'){
+
+        this.imagens[i].estado = 'escondido';
+
+        idx = i === 4? 0: 4;
+
+        break;
+
+      }
+
+    }
+
+    //Exibir a próxima imagem
+
+    this.imagens[idx].estado = 'visivel';
+
+
+
+    
+    setTimeout(() => this.logicaRotacao(), 2000);
+
   }
 
 }
