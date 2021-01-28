@@ -34,7 +34,7 @@ export class BannerComponent implements OnInit {
 
   ngOnInit() {
 
-    setTimeout(() => this.logicaRotacao(), 2000);
+    setTimeout(() => this.logicaRotacao(), 4000);
 
   }
 
@@ -65,7 +65,7 @@ export class BannerComponent implements OnInit {
 
 
     
-    setTimeout(() => this.logicaRotacao(), 2000);
+    setTimeout(() => this.logicaRotacao(), 4000);
 
   }
 
