@@ -19,6 +19,8 @@ import { transition, animate, trigger, state, style } from '@angular/animations'
 })
 export class AcessoComponent implements OnInit {
 
+  public estadoBanner: string = 'criado';
+
   constructor() { }
 
   ngOnInit() {
