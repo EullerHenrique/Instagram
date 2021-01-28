@@ -1,6 +1,11 @@
 <div class="banner-background">
 
-  <img [@banner]="estado"
-  src="https://user-images.githubusercontent.com/48317736/105919970-4d285280-6015-11eb-931b-a6d575198789.png">
+  <img 
+
+    *ngFor="let imagem of imagens"
+    [@banner]="imagem.estado"
+    src="https://user-images.githubusercontent.com/48317736/105919970-4d285280-6015-11eb-931b-a6d575198789.png"
+  
+  >
 
 </div>
