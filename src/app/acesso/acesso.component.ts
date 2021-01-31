@@ -12,7 +12,7 @@ import { transition, animate, trigger, state, style, keyframes } from '@angular/
     })),
     transition('void  => criado',
      [ style( {opacity: 0, transform: 'translate(-50px,0) ' } ),
-       animate( '500ms 0s ease-in-out') //duração, delay e aceleração
+       animate( '500ms 0s') //duração, delay e aceleração
       ])
     ]),
      trigger('animacao-painel', [
@@ -21,14 +21,14 @@ import { transition, animate, trigger, state, style, keyframes } from '@angular/
     })),
     transition('void  => criado',
      [ style( {opacity: 0, transform: 'translate(50px,0) ' } ),
-       animate( '1.5s 0s ease-in-out', keyframes([ 
+       animate( '1.5s 0s', keyframes([ 
                                        // keyframes -> marcos/pontos de transformação da animação 
                                        //           -> diz respeito a como os valores dos atributos visuais da aimação serãp afetados durante a duração da animação 
                                        //offset -> Determina em que período temporalo keyframe será inserido na animação
             
                 //0 VOID ------X---------------------X-X-X-X-X-X-X-X CRIADO 1.5s
             
-                style({ offset: 0.15, opacity: 1, transform: 'translateX(0)'}),
+                style({ offset: 0.33, opacity: 1, transform: 'translateX(0)'}),
                 style({ offset: 0.86, opacity: 1, transform: 'translateX(0)'}),
                 
                 style({ offset: 0.88, opacity: 1, transform: 'translateY(-10px)'}),
