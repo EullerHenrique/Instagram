@@ -10,8 +10,8 @@ import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule ],
-  declarations: [ AppComponent, AcessoComponent, BannerComponent, LoginComponent, CadastroComponent, ReactiveFormsModule ],
+  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule,  ReactiveFormsModule ],
+  declarations: [ AppComponent, AcessoComponent, BannerComponent, LoginComponent, CadastroComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
