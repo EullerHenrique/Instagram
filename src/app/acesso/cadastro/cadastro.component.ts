@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Usuario } from '../usuario.model';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
