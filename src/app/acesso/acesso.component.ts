@@ -26,14 +26,19 @@ import { transition, animate, trigger, state, style, keyframes } from '@angular/
                                        //           -> diz respeito a como os valores dos atributos visuais da aimação serãp afetados durante a duração da animação 
                                        //offset -> Determina em que período temporalo keyframe será inserido na animação
             
-                //0 VOID ------X----------------------X-X-X--------X CRIADO 1.5s
+                //0 VOID ------X---------------------X-X-X-X-X-X-X-X CRIADO 1.5s
             
                 style({ offset: 0.15, opacity: 1, transform: 'translateX(0)'}),
                 style({ offset: 0.86, opacity: 1, transform: 'translateX(0)'}),
                 
                 style({ offset: 0.88, opacity: 1, transform: 'translateY(-10px)'}),
                 style({ offset: 0.90, opacity: 1, transform: 'translateY(10px)'}),
-                
+
+                style({ offset: 0.92, opacity: 1, transform: 'translateY(-10px)'}),
+                style({ offset: 0.94, opacity: 1, transform: 'translateY(10px)'}),
+                style({ offset: 0.96, opacity: 1, transform: 'translateY(-10px)'}),
+                style({ offset: 0.98, opacity: 1, transform: 'translateY(10px)'}),
+
                 style({ offset: 1, opacity: 1, transform: 'translateX(0)'})
       
        ])) //duração, delay e aceleração
