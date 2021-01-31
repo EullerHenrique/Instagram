@@ -27,4 +27,8 @@ export class CadastroComponent implements OnInit {
 
   }
 
+  public cadastrarUsuario(): void{
+    console.log(this.form);
+  }
+
 }
