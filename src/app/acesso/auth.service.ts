@@ -1,4 +1,4 @@
-import * asfirebase from "firebase";
+import * as firebase from "firebase";
 
 import { Usuario } from "./usuario.model";
 
