@@ -1,4 +1,5 @@
-import * as firebase from "firebase";
+import firebase from "firebase";
+
 import { Usuario } from "./usuario.model";
 
 export class Auth{
