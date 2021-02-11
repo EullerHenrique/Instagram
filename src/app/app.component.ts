@@ -15,8 +15,6 @@ export class AppComponent implements OnInit{
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-   // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
     apiKey: "AIzaSyBiSVAIcpOoCd-1-EsjMbWuzgW8nAMyN-Y",
     authDomain: "instagram-c254b.firebaseapp.com",
