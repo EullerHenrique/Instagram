@@ -37,7 +37,7 @@ export class Auth{
     .then( (resposta: any) => {
       console.log(resposta);
     })
-    .cath( (error: Error) =>{
+    .catch( (error: Error) =>{
       console.log(error);
     });
 
