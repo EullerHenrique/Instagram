@@ -16,14 +16,13 @@ export class Auth{
         delete usuario.senha;
       
         firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`).set(usuario);
-         
+        
         //btoa = Codifica uma string na base 64:
 
       })
-      
       .catch((error: Error) => {
 
-        console.log(error);
+        console.log(error.message);
 
       })
       
