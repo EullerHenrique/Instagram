@@ -10,10 +10,11 @@ import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Auth } from './acesso/auth.service';
 import { HomeComponent } from './acesso/home/home.component';
+import { PublicacoesComponent } from './acesso/publicacoes/publicacoes.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule,  ReactiveFormsModule ],
-  declarations: [ AppComponent, AcessoComponent, BannerComponent, LoginComponent, CadastroComponent, HomeComponent ],
+  declarations: [ AppComponent, AcessoComponent, BannerComponent, LoginComponent, CadastroComponent, HomeComponent, PublicacoesComponent ],
   providers: [ Auth ],
   bootstrap:    [ AppComponent ]
 })
