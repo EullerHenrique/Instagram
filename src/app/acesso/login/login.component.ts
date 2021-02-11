@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Auth } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,9 @@ export class LoginComponent implements OnInit {
 
   @Output() public exibirPainel: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(
+    public auth: Auth
+  ) { }
 
   ngOnInit() {
   }
@@ -27,7 +30,14 @@ export class LoginComponent implements OnInit {
   }
 
   public autenticar(): void{
-    console.log(this.form);
+    
+    this.auth.autenticar(
+
+      this.form.value.email, 
+      this.form.value.senha
+    
+    )
+
   }
 
 }

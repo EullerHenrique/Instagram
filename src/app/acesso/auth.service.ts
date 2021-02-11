@@ -28,4 +28,15 @@ export class Auth{
       
   }
 
+
+  public autenticar(email: string, senha: string): void{
+
+
+
+    firebase.auth().signWithEmailAndPassword(email, senha)
+    .then()
+    .cath()
+
+  }
+
 }
