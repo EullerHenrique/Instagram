@@ -10,7 +10,7 @@ import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Auth } from './acesso/auth.service';
 import { HomeComponent } from './acesso/home/home.component';
-import { PublicacoesComponent } from './acesso/publicacoes/publicacoes.component';
+import { PublicacoesComponent } from './acesso/home/publicacoes/publicacoes.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule,  ReactiveFormsModule ],
