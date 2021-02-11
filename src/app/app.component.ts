@@ -27,7 +27,6 @@ export class AppComponent implements OnInit{
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
 
   }
 
