@@ -21,8 +21,7 @@ export class Auth{
       
       .catch((error: Error) => {
 
-        console.log(error.message);
-        console.log("oioio");
+        console.log(error);
 
       })
       
