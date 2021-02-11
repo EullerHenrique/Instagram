@@ -11,12 +11,14 @@ export class Auth{
     firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.senha)
       .then((resposta: any) => {
 
+        console.log(resposta);
+
         delete usuario.senha;
       
-        firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`).set({usuario}) 
+        firebase.database().ref(`usuario_detalhe/${btoa(usuario.email)}`).set(usuario);
+         
         //btoa = Codifica uma string na base 64:
 
-        console.log(resposta);
       })
       
       .catch((error: Error) => {
