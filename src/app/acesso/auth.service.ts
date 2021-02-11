@@ -33,9 +33,14 @@ export class Auth{
 
 
 
-    firebase.auth().signWithEmailAndPassword(email, senha)
-    .then()
-    .cath()
+    firebase.auth().signInWithEmailAndPassword(email, senha)
+    .then( (resposta: any) => {
+      console.log(resposta);
+    })
+    .cath( (error: Error) =>{
+      console.log(error);
+    });
+
 
   }
 
