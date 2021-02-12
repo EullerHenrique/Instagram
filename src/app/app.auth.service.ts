@@ -59,6 +59,12 @@ export class Auth{
 
   public autenticado(): boolean{
 
+    if(this.token_id === undefined && localStorage.getItem('token_id') != null){
+      
+      this.token_id = localStorage.getItem('token_id');
+
+    }
+
     return this.token_id !== undefined;
 
   }
