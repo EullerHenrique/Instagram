@@ -11,11 +11,34 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Auth } from './acesso/auth.service';
 import { HomeComponent } from './acesso/home/home.component';
 import { PublicacoesComponent } from './acesso/home/publicacoes/publicacoes.component';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, BrowserAnimationsModule,  ReactiveFormsModule ],
-  declarations: [ AppComponent, AcessoComponent, BannerComponent, LoginComponent, CadastroComponent, HomeComponent, PublicacoesComponent ],
-  providers: [ Auth ],
-  bootstrap:    [ AppComponent ]
+  imports:     
+    [ BrowserModule,
+      FormsModule,
+      BrowserAnimationsModule,
+      ReactiveFormsModule,
+      RouterModule.forRoot(ROUTES)
+    ],
+  declarations: 
+    [
+      AppComponent,
+      AcessoComponent,
+      BannerComponent,
+      LoginComponent,
+      CadastroComponent,
+      HomeComponent,
+      PublicacoesComponent 
+    ],
+  providers: 
+    [
+       Auth 
+    ],
+  bootstrap: 
+    [ 
+       AppComponent 
+    ]
 })
 export class AppModule { }
