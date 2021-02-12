@@ -5,7 +5,8 @@ import '@firebase/database';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Usuario } from "./usuario.model";
+import { Usuario } from "./app.user.model";
+
 
 @Injectable()
 export class Auth{
