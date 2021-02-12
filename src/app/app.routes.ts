@@ -5,6 +5,6 @@ import { HomeComponent } from './acesso/home/home.component';
 export const ROUTES = [
 
   { path: '', component: AcessoComponent},
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent, canActivate: []}
 
 ];
