@@ -17,7 +17,8 @@ import { ROUTES } from './app.routes';
 
 @NgModule({
   imports:     
-    [ BrowserModule,
+    [ 
+      BrowserModule,
       FormsModule,
       BrowserAnimationsModule,
       ReactiveFormsModule,
