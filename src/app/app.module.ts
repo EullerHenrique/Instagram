@@ -9,6 +9,7 @@ import { LoginComponent } from './acesso/login/login.component';
 import { CadastroComponent } from './acesso/cadastro/cadastro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Auth } from './app.auth.service';
+import { AuthGuard } from './app.auth.guard';
 import { HomeComponent } from './home/home.component';
 import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 import { RouterModule } from '@angular/router';
@@ -34,7 +35,8 @@ import { ROUTES } from './app.routes';
     ],
   providers: 
     [
-       Auth 
+       Auth,
+       AuthGuard 
     ],
   bootstrap: 
     [ 
