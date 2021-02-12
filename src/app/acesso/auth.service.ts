@@ -2,11 +2,17 @@ import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import '@firebase/database';
 
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Usuario } from "./usuario.model";
 
+@Injectable()
 export class Auth{
 
   public token_id: string;
+
+  constructor(public router: Router){}
 
   public cadastrarUsuario(usuario: Usuario): Promise<any>{
 
@@ -40,6 +46,7 @@ export class Auth{
       firebase.auth().currentUser.getIdToken()
       .then((token_id: string)=>{ //token_id -> jwt
         this.token_id = token_id;
+        this.router.navigate(['/home']);
       })
     })
     .catch( (error: Error) =>{
