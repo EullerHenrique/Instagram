@@ -58,7 +58,7 @@ export class Auth{
 
   public autenticado(): boolean{
 
-    return this.token_id != undefined;
+    return this.token_id !== undefined;
 
   }
 
