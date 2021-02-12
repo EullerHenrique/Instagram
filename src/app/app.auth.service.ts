@@ -46,6 +46,7 @@ export class Auth{
       firebase.auth().currentUser.getIdToken()
       .then((token_id: string)=>{ //token_id -> jwt
         this.token_id = token_id;
+        localStorage.setItem('token_id',token_id);
         this.router.navigate(['/home']);
       })
     })
