@@ -38,7 +38,7 @@ export class Auth{
     firebase.auth().signInWithEmailAndPassword(email, senha)
     .then( (resposta: any) => {
       firebase.auth().currentUser.getIdToken()
-      .then((token_id: string){ //token_id -> jwt
+      .then((token_id: string)=>{ //token_id -> jwt
         this.token_id = token_id;
       })
     })
