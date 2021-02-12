@@ -58,15 +58,7 @@ export class Auth{
 
   public autenticado(): boolean{
 
-    let x: boolean = true;
-
-    if(this.token_id != undefined){
-      x = true;
-    }else{
-      x = false;
-    }
-
-    return x;
+    return this.token_id != undefined;
 
   }
 
