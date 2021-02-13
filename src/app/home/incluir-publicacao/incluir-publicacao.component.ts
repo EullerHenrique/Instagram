@@ -10,7 +10,7 @@ export class IncluirPublicacaoComponent implements OnInit {
 
   public form: FormGroup = new FormGroup({
     'titulo': new FormControl(null)
-  })
+  });
 
   constructor() { }
 
@@ -19,7 +19,7 @@ export class IncluirPublicacaoComponent implements OnInit {
 
   public publicar(): void{
 
-    console.log('oioi')
+    console.log('oioi');
 
   }
 
