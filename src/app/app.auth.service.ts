@@ -65,6 +65,12 @@ export class Auth{
 
     }
 
+    if(this.token_id === undefined){
+      this.router.navigate(['/']);
+    }
+
+
+
     return this.token_id !== undefined;
 
   }
