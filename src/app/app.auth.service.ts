@@ -74,6 +74,8 @@ export class Auth{
     firebase.auth().signOut()
     .then(()=> {
       localStorage.removeItem('token_id');
+      this.token_id = undefined;
+      this.router.navigate(['/']);
     })
   
   }
