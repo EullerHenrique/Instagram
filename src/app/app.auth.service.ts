@@ -69,6 +69,15 @@ export class Auth{
 
   }
 
+  public sair(): void{
+    
+    firebase.auth().signOut()
+    .then(()=> {
+      localStorage.removeItem('token_id');
+    })
+  
+  }
+
 }
 /*
 
