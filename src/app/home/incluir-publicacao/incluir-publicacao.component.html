@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="publicar()">
       <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="modal">Criar uma publicação</h5>
@@ -15,12 +15,13 @@
               type="text"
               placeholder="Título da publicação",
               class = "form-control"
+              formControlName="titulo"
             >
 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary">Publicar</button>
+            <button type="submit" class="btn btn-primary">Publicar</button>
           </div>
         </div>
       </form>
