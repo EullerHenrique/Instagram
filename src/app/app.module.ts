@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
 
 @NgModule({
   imports:     
@@ -32,7 +33,8 @@ import { ROUTES } from './app.routes';
       LoginComponent,
       CadastroComponent,
       HomeComponent,
-      PublicacoesComponent 
+      PublicacoesComponent,
+      IncluirPublicacaoComponent 
     ],
   providers: 
     [
