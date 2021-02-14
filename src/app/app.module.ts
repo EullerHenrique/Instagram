@@ -15,7 +15,6 @@ import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
-import { Bd } from './app.bd.service';
 
 @NgModule({
   imports:     
@@ -40,8 +39,7 @@ import { Bd } from './app.bd.service';
   providers: 
     [
        Auth,
-       AuthGuard,
-       Bd 
+       AuthGuard
     ],
   bootstrap: 
     [ 

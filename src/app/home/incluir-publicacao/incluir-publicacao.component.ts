@@ -7,7 +7,8 @@ import '@firebase/auth';
 @Component({
   selector: 'app-incluir-publicacao',
   templateUrl: './incluir-publicacao.component.html',
-  styleUrls: ['./incluir-publicacao.component.css']
+  styleUrls: ['./incluir-publicacao.component.css'],
+  providers: [ Bd ]
 })
 export class IncluirPublicacaoComponent implements OnInit {
 
