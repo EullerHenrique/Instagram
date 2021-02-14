@@ -38,4 +38,10 @@ export class IncluirPublicacaoComponent implements OnInit {
 
   }
 
+  public prepararImagemParaUpload(event: Event): void{
+
+    
+
+  }
+
 }
