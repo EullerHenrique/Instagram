@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Bd } from '../bd.service';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
+import { Progresso } from '../progresso.service';
 
 @Component({
   selector: 'app-incluir-publicacao',
@@ -18,7 +19,10 @@ export class IncluirPublicacaoComponent implements OnInit {
     'titulo': new FormControl(null)
   });
 
-  constructor(public bd: Bd) { }
+  constructor(
+    public bd: Bd,
+    public progresso: Progresso  
+  ) { }
 
   ngOnInit() {
 
@@ -37,6 +41,7 @@ export class IncluirPublicacaoComponent implements OnInit {
       titulo: this.form.value.titulo,
       imagem: this.imagem[0]
     });
+
 
   }
 
