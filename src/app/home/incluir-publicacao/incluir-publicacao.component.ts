@@ -12,6 +12,7 @@ import '@firebase/auth';
 export class IncluirPublicacaoComponent implements OnInit {
 
   public email: string;
+  public imagem: any;
 
   public form: FormGroup = new FormGroup({
     'titulo': new FormControl(null)
@@ -33,14 +34,15 @@ export class IncluirPublicacaoComponent implements OnInit {
 
     this.bd.publicar({
       email: this.email,
-      titulo: this.form.value.titulo
+      titulo: this.form.value.titulo,
+      imagem: this.imagem[0]
     });
 
   }
 
-  public prepararImagemParaUpload(event: Event): void{
+  public prepararUpload(event: Event): void{
 
-    
+    this.imagem = (<HTMLInputElement>event.target).files;
 
   }
 
