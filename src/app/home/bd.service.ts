@@ -1,9 +1,13 @@
+import { Injectable } from '@angular/core';
 import { firebase } from '@firebase/app';
 import '@firebase/database';
 import '@firebase/storage';
+import { Progresso } from './progresso.service';
 
-
+@Injectable()
 export class Bd {
+
+  constructor(public progresso: Progresso){}
   
   public publicar(publicacao: any): void{
 
