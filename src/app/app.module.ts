@@ -15,6 +15,8 @@ import { PublicacoesComponent } from './home/publicacoes/publicacoes.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-publicacao.component';
+import { Bd } from './home/bd.service';
+import { Progresso } from './home/progresso.service';
 
 @NgModule({
   imports:     
@@ -39,7 +41,9 @@ import { IncluirPublicacaoComponent } from './home/incluir-publicacao/incluir-pu
   providers: 
     [
        Auth,
-       AuthGuard
+       AuthGuard,
+       Bd,
+       Progresso 
     ],
   bootstrap: 
     [ 
