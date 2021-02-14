@@ -20,6 +20,7 @@ export class Bd {
       //Acompanha pogresso do upload
       (snapshot: any) => {
         this.progresso.status = 'andamento';
+        this.progresso.estado = snapshot;
         console.log(snapshot);
       },
 
