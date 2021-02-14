@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Bd } from '../../app.bd.service';
+import { Bd } from '../app.bd.service';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
 
