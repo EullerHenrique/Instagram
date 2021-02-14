@@ -1,11 +1,17 @@
 import { firebase } from '@firebase/app';
-import '@firebase/auth';
 import '@firebase/database';
+import '@firebase/storage';
 
 
 export class Bd {
   
   public publicar(publicacao: any): void{
-    firebase.database().ref(`publicacoes/${btoa(publicacao.email)}`).push({titulo: publicacao.titulo})
+
+    let imageName = Date.now();
+    firebase.storage().ref()
+    .child(`imagens/${imageName}`)
+    .put(publicacao.imagem);
+
+    firebase.database().ref(`publicacoes/${btoa(publicacao.email)}`).push({titulo: publicacao.titulo});
   }
 }
