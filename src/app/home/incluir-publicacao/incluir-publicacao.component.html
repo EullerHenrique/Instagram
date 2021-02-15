@@ -43,74 +43,30 @@
     <div class="modal-content" *ngIf="progressoPublicacao === 'Upload em andamento'">
   
         <div class="modal-header">
-          <h5 class="modal-title" id="modal">Criar uma publicação</h5>
+          <h5 class="modal-title" id="modal">Upload da publicação em andamento</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
 
-        <form [formGroup]="form" (ngSubmit)="publicar()">
-
-        <div class="modal-body">
-
-         <input 
-          type="file"
-          class="form-control mb-2" 
-          style="padding-bottom: 35px"
-          accept="image/*"
-          (change)="prepararUpload($event)"
-          >
-
-         <input 
-          type="text"
-          placeholder="Título da publicação"
-          class="form-control"
-          formControlName="titulo"
-         >
+        <div>
+            Progresso: {{ porcetagemUpload }}
         </div>
-  
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Publicar</button>
-        </div>
-  
-      </form>
+
     </div>
     <div class="modal-content" *ngIf="progressoPublicacao === 'Upload concluido'">
   
         <div class="modal-header">
-          <h5 class="modal-title" id="modal">Criar uma publicação</h5>
+          <h5 class="modal-title" id="modal">Publicação realizada com sucesso</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
 
-        <form [formGroup]="form" (ngSubmit)="publicar()">
-
-        <div class="modal-body">
-
-         <input 
-          type="file"
-          class="form-control mb-2" 
-          style="padding-bottom: 35px"
-          accept="image/*"
-          (change)="prepararUpload($event)"
-          >
-
-         <input 
-          type="text"
-          placeholder="Título da publicação"
-          class="form-control"
-          formControlName="titulo"
-         >
+        <div>
+          Sua publicação foi realizada com sucesso!
         </div>
-  
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Publicar</button>
-        </div>
-  
-      </form>
+
     </div>
   </div>
 </div>
