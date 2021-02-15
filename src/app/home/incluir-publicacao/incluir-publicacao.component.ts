@@ -18,6 +18,9 @@ export class IncluirPublicacaoComponent implements OnInit {
   public email: string;
   public imagem: any;
 
+  public progressoPublicacao: string = 'Upload pendente';
+  public porcentagemUpload: number;
+
   public form: FormGroup = new FormGroup({
     'titulo': new FormControl(null)
   });
@@ -59,6 +62,7 @@ export class IncluirPublicacaoComponent implements OnInit {
         continuaUpload.next(false);
       }
 
+      this.progressoPublicacao =  this.progresso.msg_status;
 
     })
 
