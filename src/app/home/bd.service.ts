@@ -11,29 +11,36 @@ export class Bd {
   
   public publicar(publicacao: any): void{
 
-    let imageName = Date.now();
-    firebase.storage().ref()
-    .child(`imagens/${imageName}`)
-    .put(publicacao.imagem)
-    .on(firebase.storage.TaskEvent.STATE_CHANGED,
-      
-      //Acompanha pogresso do upload
-      (snapshot: any) => {
-        this.progresso.msg_status = 'Upload em andamento';
-        this.progresso.status = snapshot;
-      },
+    let imageName;
 
-      //Erro do upload
-      (error) => {
-        this.progresso.msg_status = 'Erro ao tentar fazer o upload';
-      },
-      
-      //Finalização do upload
-      () => {
-        this.progresso.msg_status = 'Upload concluido';
-      }
-    )
-    
-    firebase.database().ref(`publicacoes/${btoa(publicacao.email)}`).push({titulo: publicacao.titulo});
+
+    firebase.database().ref(`publicacoes/${btoa(publicacao.email)}`).push({titulo: publicacao.titulo})
+    .then((resposta: any) =>{
+
+      let imageName = resposta.key;
+      firebase.storage().ref()
+      .child(`imagens/${imageName}`)
+      .put(publicacao.imagem)
+      .on(firebase.storage.TaskEvent.STATE_CHANGED,
+        
+        //Acompanha pogresso do upload
+        (snapshot: any) => {
+          this.progresso.msg_status = 'Upload em andamento';
+          this.progresso.status = snapshot;
+        },
+
+        //Erro do upload
+        (error) => {
+          this.progresso.msg_status = 'Erro ao tentar fazer o upload';
+        },
+        
+        //Finalização do upload
+        () => {
+          this.progresso.msg_status = 'Upload concluido';
+        }
+      )
+
+    })
+  
   }
 }
