@@ -55,7 +55,7 @@ export class IncluirPublicacaoComponent implements OnInit {
       console.log(this.progresso.msg_status);
       console.log(this.progresso.status);
 
-      if(this.progresso.status === 'Upload concluido'){
+      if(this.progresso.msg_status === 'Upload concluido'){
         continuaUpload.next(false);
       }
 
