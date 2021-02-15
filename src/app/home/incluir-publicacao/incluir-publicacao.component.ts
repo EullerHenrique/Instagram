@@ -6,6 +6,7 @@ import '@firebase/auth';
 import { Progresso } from '../progresso.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
+import { Subject } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-incluir-publicacao',
@@ -44,10 +45,21 @@ export class IncluirPublicacaoComponent implements OnInit {
       imagem: this.imagem[0]
     });
 
-    let acompanhamentoUpload = Observable.interval(1500);
-    acompanhamentoUpload.subscribe(()=>{
+    let acompanhaUpload = Observable.interval(1500);
+    let continuaUpload = new Subject();
+    continuaUpload.next(true);
+
+    acompanhaUpload
+      .takeUntil(continuaUpload)
+      .subscribe(()=>{
       console.log(this.progresso.msg_status);
       console.log(this.progresso.status);
+
+      if(this.progresso.status === 'Upload concluido'){
+        continuaUpload.next(false);
+      }
+
+
     })
 
   }
