@@ -19,20 +19,20 @@ export class Bd {
       
       //Acompanha pogresso do upload
       (snapshot: any) => {
-        this.progresso.status = 'andamento';
-        this.progresso.estado = snapshot;
+        this.progresso.msg_status = 'andamento';
+        this.progresso.status = snapshot;
         console.log(snapshot);
       },
 
       //Erro do upload
       (error) => {
-        this.progresso.status = 'erro';
+        this.progresso.msg_status = 'erro';
         console.log(error);
       },
       
       //Finalização do upload
       () => {
-        this.progresso.status = 'concluido';
+        this.progresso.msg_status = 'concluido';
         console.log('upload completo');
       }
     )

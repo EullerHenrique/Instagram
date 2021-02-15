@@ -4,6 +4,8 @@ import { Bd } from '../bd.service';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import { Progresso } from '../progresso.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 @Component({
   selector: 'app-incluir-publicacao',
@@ -42,6 +44,11 @@ export class IncluirPublicacaoComponent implements OnInit {
       imagem: this.imagem[0]
     });
 
+    let acompanhamentoUpload = Observable.interval(1500);
+    acompanhamentoUpload.subscribe(()=>{
+      console.log(this.progresso.msg_status);
+      console.log(this.progresso.status);
+    })
 
   }
 

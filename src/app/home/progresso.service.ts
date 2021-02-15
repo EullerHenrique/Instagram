@@ -1,7 +1,7 @@
 export class Progresso{
 
-  public status: string;
-  public estado: any;
-  
+  public msg_status: string;
+  public status: any;
+
 
 }
