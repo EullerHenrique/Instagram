@@ -24,7 +24,7 @@ export class PublicacoesComponent implements OnInit {
 
   public atualizarTimeline(): void{
 
-    this.bd.consultaPublicacoes(this.email)
+    this.bd.consultaPublicacoes(this.email);
 
   }
 
