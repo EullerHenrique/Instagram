@@ -66,10 +66,11 @@ export class Bd {
           
         })
 
-        return publicacoes.reverse;
+        return publicacoes.reverse();
 
       })
       .then((publicacoes) =>{
+
 
         publicacoes.forEach((publicacao) => {
 
