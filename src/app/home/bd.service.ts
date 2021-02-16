@@ -52,9 +52,11 @@ export class Bd {
       
       //Consulta as publicações (database)
       firebase.database().ref(`publicacoes/${btoa(emailUsuario)}`)
-      .orderByKey()
       .once('value')
       .then((snapshot)=> {
+
+        console.log(snapshot.val());
+
 
         let publicacoes: Array<any> = [];
 
@@ -101,6 +103,8 @@ export class Bd {
         })
    
          resolve(publicacoes);
+
+         console.log(publicacoes);
 
       })
 
