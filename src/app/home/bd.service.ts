@@ -46,7 +46,7 @@ export class Bd {
 
   public consultarPublicacoes(emailUsuario: string): any{
 
-
+    //Consulta as publicações (database)
     firebase.database().ref(`publicacoes/${btoa(emailUsuario)}`)
     .once('value')
     .then((snapshot)=> {
@@ -57,7 +57,7 @@ export class Bd {
 
         let publicacao = childSnapshot.val();
         
-        // Consulta a url da imagem 
+        // Consulta a url da imagem (storage)
         firebase.storage().ref()
         .child(`imagens/${childSnapshot.key}`)
         .getDowloadUrl()
@@ -65,7 +65,7 @@ export class Bd {
           
           publicacao.url_imagem = url;
 
-          //Consulta o nome do usuário
+          //Consulta o nome do usuário (databse)
           firebase.database().ref(`usuario_detalhe/${emailUsuario}`)
           .once('value')
           .then((snapshot) => {
