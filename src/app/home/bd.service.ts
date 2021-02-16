@@ -101,9 +101,9 @@ export class Bd {
    
       })
 
-   
+      resolve(puvlicacoes)
 
-      })
+    })
 
   }
 }
