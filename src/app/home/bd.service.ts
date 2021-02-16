@@ -44,50 +44,54 @@ export class Bd {
   
   }
 
-  public consultarPublicacoes(emailUsuario: string): any{
+  public consultarPublicacoes(emailUsuario: string): Promise<any>{
 
-    //Consulta as publicações (database)
-    firebase.database().ref(`publicacoes/${btoa(emailUsuario)}`)
-    .once('value')
-    .then((snapshot)=> {
+    return new Promise((resolve, reject)=>{
 
-      let publicacoes: Array<any> = [];
 
-      snapshot.forEach((childSnapshot)=>{
+      
+      //Consulta as publicações (database)
+      firebase.database().ref(`publicacoes/${btoa(emailUsuario)}`)
+      .once('value')
+      .then((snapshot)=> {
 
-        let publicacao = childSnapshot.val();
-        
-        // Consulta a url da imagem (storage)
-        firebase.storage().ref()
-        .child(`imagens/${childSnapshot.key}`)
-        .getDownloadURL()
-        .then((url:string) => {
+        let publicacoes: Array<any> = [];
+
+        snapshot.forEach((childSnapshot)=>{
+
+          let publicacao = childSnapshot.val();
           
-          publicacao.url_imagem = url;
-
-          //Consulta o nome do usuário (database)
-          firebase.database().ref(`usuario_detalhe/${btoa(emailUsuario)}`)
-          .once('value')
-          .then((snapshot) => {
-
-            publicacao.nome_usuario = snapshot.val().nome_usuario;
+          // Consulta a url da imagem (storage)
+          firebase.storage().ref()
+          .child(`imagens/${childSnapshot.key}`)
+          .getDownloadURL()
+          .then((url:string) => {
             
-            publicacoes.push(publicacao);
+            publicacao.url_imagem = url;
 
+            //Consulta o nome do usuário (database)
+            firebase.database().ref(`usuario_detalhe/${btoa(emailUsuario)}`)
+            .once('value')
+            .then((snapshot) => {
+
+              publicacao.nome_usuario = snapshot.val().nome_usuario;
+              
+              publicacoes.push(publicacao);
+
+
+            })
 
           })
-
         })
+
+        resolve(publicacoes);
+
       })
 
-      console.log(publicacoes);
+      //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
+      //.once -> Executa uma única consulta
 
-    })
-
-    //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
-    //.once -> Executa uma única consulta
-
-
+      })
 
   }
 }
