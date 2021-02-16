@@ -65,7 +65,7 @@ export class Bd {
           
           publicacao.url_imagem = url;
 
-          //Consulta o nome do usuário (databse)
+          //Consulta o nome do usuário (database)
           firebase.database().ref(`usuario_detalhe/${emailUsuario}`)
           .once('value')
           .then((snapshot) => {
