@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Auth } from '../app.auth.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { Auth } from '../app.auth.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  //O atributo publicacoes recebe o conteúdo do atributo publicacoes presente no componente filho incluir-publicação
+  @ViewChild('publicacoes') public publicacoes: any;
 
   constructor(public auth: Auth) { }
 
@@ -18,6 +21,8 @@ export class HomeComponent implements OnInit {
   }
 
   public atualizarTimeline(): void{
+
+    this.publicacoes.atualizarTimeline();
 
   }
 
