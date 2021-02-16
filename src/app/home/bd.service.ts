@@ -43,4 +43,20 @@ export class Bd {
     })
   
   }
+
+  public consultaPublicacoes(emailUsuario: string): any{
+
+
+    firebase.database().ref(`publicacoes/${btoa(emailUsuario)}`)
+    .once('value')
+    .then((snapshot)=> {
+      
+    })
+
+    //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
+    //.once -> Executa uma única consulta
+
+
+
+  }
 }
