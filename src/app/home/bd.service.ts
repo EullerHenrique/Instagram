@@ -99,9 +99,10 @@ export class Bd {
           
         })
    
+         resolve(publicacoes);
+
       })
 
-      resolve(puvlicacoes)
 
     })
 
