@@ -11,6 +11,7 @@ import '@firebase/auth';
 export class PublicacoesComponent implements OnInit {
 
   public email: string;
+  public publicacoes: any;
 
   constructor(public bd: Bd) { }
 
@@ -28,7 +29,7 @@ export class PublicacoesComponent implements OnInit {
 
     this.bd.consultarPublicacoes(this.email)
     .then((publicacoes) => {
-      
+        this.publicacoes = publicacoes;
     });
 
   }
