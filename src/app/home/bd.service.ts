@@ -60,13 +60,13 @@ export class Bd {
         // Consulta a url da imagem (storage)
         firebase.storage().ref()
         .child(`imagens/${childSnapshot.key}`)
-        .getDowloadUrl()
+        .getDownloadURL()
         .then((url:string) => {
           
           publicacao.url_imagem = url;
 
           //Consulta o nome do usuário (database)
-          firebase.database().ref(`usuario_detalhe/${emailUsuario}`)
+          firebase.database().ref(`usuario_detalhe/${btoa(emailUsuario)}`)
           .once('value')
           .then((snapshot) => {
 
@@ -79,6 +79,8 @@ export class Bd {
 
         })
       })
+
+      console.log(publicacoes);
 
     })
 
