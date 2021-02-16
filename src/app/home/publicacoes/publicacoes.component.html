@@ -1,19 +1,19 @@
-<div class="row">
+<div class="row" *ngFor="let publicacoes of publicacao"
 
   <div class="col d-flex justify-content-center">
   
     <div class="card">
   
       <div class="card-body">
-        <p class="card-text"><strong>euller_hbo</strong></p>
+        <p class="card-text"><strong>{{ publicacao.nome_usuario }}</strong></p>
       </div>
 
-      <img class="card-img" src="https://user-images.githubusercontent.com/48317736/107711953-523d0100-6ca7-11eb-85e2-f695102516f7.png" />
+      <img class="card-img" src = {{ publicacao.url_imagem }} />
       
       <div class="card-body">
   
         <p class="card-text">
-          <strong>euller_hbo</strong> Foi um belo dia no parque!
+          <strong>{{ publicacao.nome_usuario }}</strong> {{ publicacao.titulo }}
         </p>
 
         <hr>
