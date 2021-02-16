@@ -60,7 +60,7 @@ export class Bd {
 
         snapshot.forEach((childSnapshot)=>{
 
-          let publicacao = childSnapshot.val();
+          let publicacao = childSnapshot.val(); //childSnapshot.val() -> objeto
           publicacao.key = childSnapshot.key;
           publicacoes.push(publicacao);
           
