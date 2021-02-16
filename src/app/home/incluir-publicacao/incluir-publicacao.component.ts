@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Bd } from '../bd.service';
 import { firebase } from '@firebase/app';
@@ -24,6 +24,8 @@ export class IncluirPublicacaoComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     'titulo': new FormControl(null)
   });
+
+  @Output() public atualizarTimeline: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     public bd: Bd,
@@ -55,12 +57,14 @@ export class IncluirPublicacaoComponent implements OnInit {
     acompanhaUpload
       .takeUntil(continuaUpload)
       .subscribe(()=>{
-        
+
 
       this.porcentagemUpload = Math.round(this.progresso.status.bytesTransferred/this.progresso.status.totalBytes*100);
 
 
       if(this.progresso.msg_status === 'Upload concluido'){
+       
+        this.atualizarTimeline.emit();
         continuaUpload.next(false);
       }
 
