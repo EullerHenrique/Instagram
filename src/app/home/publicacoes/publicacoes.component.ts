@@ -18,13 +18,15 @@ export class PublicacoesComponent implements OnInit {
 
     firebase.auth().onAuthStateChanged((user)=>{
       this.email=user.email;
+
+      this.atualizarTimeline();
     }) 
 
   }
 
   public atualizarTimeline(): void{
 
-    this.bd.consultaPublicacoes(this.email);
+    this.bd.consultarPublicacoes(this.email);
 
   }
 
