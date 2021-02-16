@@ -57,12 +57,22 @@ export class Bd {
 
         let publicacao = childSnapshot.val();
         
+        // Consulta a url da imagem 
         firebase.storage().ref()
         .child(`imagens/${childSnapshot.key}`)
         .getDowloadUrl()
         .then((url:string) => {
           
           publicacao.url_imagem = url;
+
+          //Consulta o nome do usuário
+          firebase.database().ref(`usuario_detalhe/${emailUsuario}`)
+          .once('value')
+          .then((snapshot) => {
+
+            publicacao.nome_usuario = snapshot.val().nome_usuario;
+
+          })
           publicacoes.push(publicacao);
 
         })
