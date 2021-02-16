@@ -71,9 +71,11 @@ export class Bd {
           .then((snapshot) => {
 
             publicacao.nome_usuario = snapshot.val().nome_usuario;
+            
+            publicacoes.push(publicacao);
+
 
           })
-          publicacoes.push(publicacao);
 
         })
       })
