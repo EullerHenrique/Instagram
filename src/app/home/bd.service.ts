@@ -89,9 +89,6 @@ export class Bd {
 
               publicacao.nome_usuario = snapshot.val().nome_usuario;
               
-              publicacoes.push(publicacao);
-
-
             })
 
             //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
