@@ -51,6 +51,23 @@ export class Bd {
     .once('value')
     .then((snapshot)=> {
 
+      let publicacoes: Array<any> = [];
+
+      snapshot.forEach((childSnapshot)=>{
+
+        let publicacao = childSnapshot.val();
+        
+        firebase.storage().ref()
+        .child(`imagens/${childSnapshot.key}`)
+        .getDowloadUrl()
+        .then((url:string) => {
+          
+          publicacao.url_imagem = url;
+          publicacoes.push(publicacao);
+
+        })
+      })
+
     })
 
     //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
