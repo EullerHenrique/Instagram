@@ -67,7 +67,6 @@ export class Bd {
         })
 
         return publicacoes.reverse;
-        //resolve(publicacoes);
 
       })
       .then((publicacoes) =>{
