@@ -55,8 +55,7 @@ export class IncluirPublicacaoComponent implements OnInit {
     acompanhaUpload
       .takeUntil(continuaUpload)
       .subscribe(()=>{
-      console.log(this.progresso.msg_status);
-      console.log(this.progresso.status);
+        
 
       this.porcentagemUpload = Math.round(this.progresso.status.bytesTransferred/this.progresso.status.totalBytes*100);
 
