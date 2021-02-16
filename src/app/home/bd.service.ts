@@ -61,10 +61,23 @@ export class Bd {
         snapshot.forEach((childSnapshot)=>{
 
           let publicacao = childSnapshot.val();
+          publicacao.key = childSnapshot.key;
+          publicacoes.push(publicacao);
+          
+        })
+
+        return publicacoes.reverse;
+        //resolve(publicacoes);
+
+      })
+      .then((publicacoes) =>{
+
+        publicacoes.forEach((publicacao) => {
+
           
           // Consulta a url da imagem (storage)
           firebase.storage().ref()
-          .child(`imagens/${childSnapshot.key}`)
+          .child(`imagens/${publicacao.key}`)
           .getDownloadURL()
           .then((url:string) => {
             
@@ -82,15 +95,17 @@ export class Bd {
 
             })
 
+            //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
+            //.once -> Executa uma única consulta
+            
+
           })
+          
         })
-
-        resolve(publicacoes);
-
+   
       })
 
-      //.on() -> É um listener, ou seja, esse metódo executa uma consulta a cada vez que o dado em questão é modificado
-      //.once -> Executa uma única consulta
+   
 
       })
 
